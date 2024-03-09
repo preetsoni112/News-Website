@@ -1,0 +1,313 @@
+<!--If it doesn't show NewsssGoto https://newsapi.org , sign up , Paste the news link with your api key in script tag down here. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta http-equiv="X-UA-Compatible" content="IE=edge">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:opsz,wght,FILL,GRAD@20..48,100..700,0..1,-50..200" />
+<title>World Newz</title>
+<link rel="icon" href="img/india.jpg">
+<style>
+    *{
+        margin: 0;
+        padding: 0;
+        font-family: Bell MT;
+    }
+    body{
+        background-image: url(c3.jpg);
+        background-size: cover;
+        background-repeat: no-repeat;        
+        background-position: center;
+        background-attachment: fixed;        
+        background-clip: border-box;        
+        background-origin: border-box;
+    }
+    .navbar{
+        background: linear-gradient(to right,orange,#86e680,#2998e7);
+        background-repeat: no-repeat;
+        padding: 12px;
+        opacity: 0.7;
+        min-height: 50px;
+        justify-content: center;
+    }
+    
+    h1{
+        color: #1d0af9;
+        text-decoration: underline;
+        text-align: center;
+        padding:26px;
+        font-size: 2em;
+    }
+    
+    h1:hover{
+        letter-spacing: 15px;
+        transition: 1s;
+    }
+
+    .list {
+        list-style-type: none;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+    }
+
+    .item {
+        padding: 16px;
+        color: Red;
+        margin-right: 16px;
+        font-size: 30px;
+        border: 2px solid blue;
+        border-radius: 8px;
+    }
+            
+    a{
+       text-decoration: none;
+    }
+    
+    a:active{
+        background-color: #59e6aa;
+    }
+
+    .item:hover {
+            background-color: #59e6aa;
+            border-radius: 6px;
+            transition: 0.8s;
+            transform: rotate(360deg);
+    }
+
+    #active {
+            background-color: #59e6aa;
+            border-radius: 6px;
+    }
+
+
+    .card{
+        padding: 16px;
+        background-image: conic-gradient(from 36deg at 15% 85% , #A100FFFF 0% , #000000 25% , #119CFDFF 30% );
+        background-size: cover;
+        background-repeat: no-repeat;        
+        background-position: center;
+        color: white;
+        border-radius: 8px;
+        text-align: center;
+        box-shadow:3px 3px 6px black  , inset 5px 5px 8px white;
+        width: 25%;
+        margin: 100px auto 50px;
+        display: inline-table;
+        align-items: center;
+    }
+    .content{
+        text-align: center;
+        display: inline;
+    }
+    .bottom{
+        padding: 24px;
+        background-color: #6b6969;
+        height: 50px;
+        word-wrap: normal;
+    }
+    .desc {
+        font-size: 17px;
+        word-wrap: normal;
+        position: relative;
+        font-family: sans-serif;
+    }
+    
+    .cardimage{
+        height: 200px;
+        width: 100%;
+        object-fit: cover;
+        border-radius: 5px;
+    }
+    
+    #Title {
+        font-size: 21px;
+        font-weight: bolder;
+        position: relative;
+        font-family: monospace;
+        color: #b30f1e;
+        text-decoration: underline;
+    }
+    
+    .menu{
+        font-size: 32px;
+        top: 28px;
+        left: 10px;
+        cursor: pointer;
+        display: none;
+        color: darkgreen;
+        background-color: white;
+        position: absolute;
+    }
+    
+    .close{
+        font-size: 32px;
+        top: 28px;
+        left: 10px;
+        display: none;
+        color: darkred;
+        background-color: white;
+        position: absolute;
+        cursor: pointer;
+    }
+    
+    @media only screen and (max-width:890px) {
+        .menu{
+            display: inline;
+        }
+        
+        .navbar{
+            display: none;
+        }
+        
+        .navimg{
+            display: none;
+        }
+        
+        .list{
+            flex-direction: column;
+        }
+        
+        .item{
+            border: 0;
+        }
+        
+        .card{
+            width: 21% !important;
+        }
+        
+        .cardimage{
+            height: 115px;
+        }
+        
+        .desc{
+            font-size: 10px;
+        }
+        
+        .title{
+            font-size: 15px;
+        }
+    }
+    
+    @media only screen and (max-width:625px) {
+        .bigcard{
+            display: grid;
+            justify-content: space-evenly;
+        }
+        
+        .card3{
+            display: none !important;
+        }
+        
+        .card{
+            width: 50% !important;
+        }
+    }
+    
+    @media only screen and (max-width:365px) {
+        .card2{
+            display: none !important;
+        } 
+    }
+    
+</style>
+</head>
+<body>
+<div class="worldnews" style="display: flex; opacity: 0.7; background: linear-gradient(to right,orange,#86e680,#2998e7);justify-content: center;">
+<img class="navimg" src="India.jpg" width="60" height="60px" style="border-radius: 34px;margin-top: 10px;"> &nbsp;
+<h1>India Newz</h1> &nbsp;
+<img class="navimg"  src="India.jpg" width="60" height="60px" style="border-radius: 34px;margin-top: 10px;">
+</div>
+ 
+<div>
+  <span class="material-symbols-outlined menu">menu</span>  
+  <span class="material-symbols-outlined close">cancel</span>
+</div>    
+    
+<div class="navbar" id="navbar">
+   <ul class="list">
+       <a class="links" href="entertainment.html"><li class="item" id="item1">Entertainment</li></a> 
+       <a class="links" href="technology.html"><li class="item" id="item2">Technology</li></a>
+       <a class="links" href="sports.html"><li class="item" id="item3">Sports</li></a>
+       <a class="links" href="health.html"><li class="item" id="item4">Health</li></a>
+       <a class="links" href="science.html"><li class="item" id="item5">Science</li></a>
+   </ul>
+</div>
+    
+<!--<div class="card" style="width:25%;margin:23px;padding: 5px;">
+        <div class="card-img"> 
+            <img src="">
+        </div>
+        <div class="card-content">
+            <h2 class="title">Title</h2>
+            <p class="desc" id="desc" >Description</p>
+            <button class="btn btn-dark" style="float:right">Read More...</button>
+        </div>
+      </div>-->
+<div id="news"></div>
+<div class="bottom"></div>
+    
+<script>
+ 
+  let menu = document.querySelector(".menu");
+  let close = document.querySelector(".close");
+  let navbar = document.querySelector(".navbar");
+    
+  menu.addEventListener('click', (e) =>{
+      menu.style.display = "none";
+      menu.style.transition = "1s";
+      close.style.display = "block";
+      navbar.style.display = "flex";
+  })
+    
+  close.addEventListener('click', (e) =>{
+      close.style.display = "none";
+      menu.style.display = "block";
+      menu.style.transition = "1s";
+      navbar.style.display = "none";
+  })
+    
+  let news =  document.getElementById("news");
+  async function data(){
+             //  Paste your Link here in url value.
+            let url = "https://newsapi.org/v2/everything?q=hollywood&from=2024-02-08&sortBy=publishedAt&apiKey=3c011b7a514d40f591c865f0585822e9";   
+            let data = await fetch(url);
+            let json = await data.json();
+            console.log(data);
+            for(i = 0 ; i < 70 ; i++){
+                news.innerHTML +=      `<div class="bigcard" style="display:flex;justify-content:space-evenly !important">
+                                        <div class="card" style="width:27%;margin:23px;padding: 5px;">          <div class="card-img">
+                                             <img class="cardimage" src="${json.articles[i].urlToImage}" width="82%">
+                                         </div><br>
+                                         <div class="card-content">
+                                             <h2 class="title">${json.articles[i].title}</h2><br>
+                                             <p class="desc" id="desc" >${json.articles[i].description}</p>
+                                         </div>
+                                        </div>
+
+                                        <div class="card card2" style="width:27%;margin:23px;padding: 5px;">          <div class="card-img">
+                                             <img class="cardimage" src="${json.articles[i+1].urlToImage}" width="82%">
+                                         </div><br>
+                                         <div class="card-content">
+                                             <h2 class="title">${json.articles[i+1].title}</h2><br>
+                                             <p class="desc" id="desc" >${json.articles[i+1].description}</p>
+                                         </div>
+                                        </div>
+
+                                        <div class="card card3" style="width:27%;margin:23px;padding: 5px;">          <div class="card-img">
+                                             <img class="cardimage" src="${json.articles[i+2].urlToImage}" width="82%">
+                                         </div><br>
+                                         <div class="card-content">
+                                             <h2 class="title">${json.articles[i+2].title}</h2><br>
+                                             <p class="desc" id="desc" >${json.articles[i+2].description}</p>
+                                         </div>
+                                        </div>
+                                        </div>`
+                                  }
+                                  };
+  data();
+</script>
+</body>
+</html>
